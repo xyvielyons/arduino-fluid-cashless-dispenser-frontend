@@ -11,6 +11,9 @@ const config: Config = withUt({
   ],
   theme: {
   	extend: {
+		backgroundImage:{
+			myimagebackground:"url('/public/water.jpg')"
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

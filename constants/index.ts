@@ -1,40 +1,51 @@
-export const LeftNavigationConstants = [
+export const NavigationConstants = [
+    {
+        label:"Home",
+        route:'/'
+    },
+    {
+        label:"Shop",
+        route:'/shop'
+    },
     {
         label:"Dashboard",
         route:'/dashboard'
-    },
-    {
-        label:"Employees",
-        route:'/employees'
-    },
-    {
-        label:"Checkins",
-        route:'/checkins'
-    },
-    {
-        label:"Checkouts",
-        route:'/checkouts'
     }
 ]
-export const steps = [
+export const offers = [
     {
-        number:1,
-        title:"Add new Employee",
-        subtitle:"Fill the form with the correct details"
+        image:"",
+        label:"300 ml bottle",
+        price:"3"
     },
     {
-        number:2,
-        title:"Register tag",
-        subtitle:"please enter the tag number"
+        image:"",
+        label:"500 ml bottle",
+        price:"5"
     },
     {
-        number:3,
-        title:"upload photo",
-        subtitle:"upload the employees photo."
+        image:"",
+        label:"1 litre bottle",
+        price:"10"
     },
     {
-        number:4,
-        title:"Submit form",
-        subtitle:"Check if the information below is correct before you register the employee"
+        image:"",
+        label:"2 litre bottle",
+        price:"15"
+    },
+    {
+        image:"",
+        label:"5 litre bottle",
+        price:"25"
+    },
+    {
+        image:"",
+        label:"10 litre bottle",
+        price:"50"
+    },
+    {
+        image:"",
+        label:"20 litre bottle",
+        price:"100"
     },
 ]

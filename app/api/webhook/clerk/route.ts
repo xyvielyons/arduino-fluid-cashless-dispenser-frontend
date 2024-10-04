@@ -54,12 +54,13 @@ export async function POST(req: Request) {
   const eventType = evt.type
   
   if(eventType === "user.created"){
-    const {id,email_addresses,username} = evt.data
+    const {id,email_addresses,first_name,last_name,username} = evt.data
     console.log(evt.data)
     const organization = {
       clerkId:id,
       email:email_addresses[0].email_address,
-      username:username!,
+      username:`${first_name!} ${last_name!} ${username!}`,
+      role:"client"
     }
     try {
       const config = {
@@ -100,6 +101,7 @@ export async function POST(req: Request) {
     const organization = {
       id:public_metadata.organizationId,
       username:username!,
+      
     }
     try {
       const serverUrl = process.env.EXPRESS_SERVER_URI;
