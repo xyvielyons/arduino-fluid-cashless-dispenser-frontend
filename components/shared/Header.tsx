@@ -62,7 +62,7 @@ const Header = () => {
                 <div className="text-gray-600 subtitlemedium font-light text-sm">{organizationData.data.role}</div>
               )}
             </div>
-            <div className=""><IoCartOutline className='w-[24px] h-[24px]'></IoCartOutline></div>
+           
           </div>
         </SignedIn>
         <SignedOut>

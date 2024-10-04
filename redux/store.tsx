@@ -1,7 +1,7 @@
 // store/store.ts
 import { configureStore } from "@reduxjs/toolkit";
 //import the ConterSlice from Slices folder
-import AddEmployeeSlice from "./slices/AddEmployeeSlice";
+import OrderSlice from "./slices/OrderSlice";
 //configure your store
 export const store = configureStore({
     
@@ -9,7 +9,7 @@ export const store = configureStore({
       
       //define your slices here
       //the first is the name of the slice parsing in the counterSlice
-      AddEmployee:AddEmployeeSlice
+      Offer:OrderSlice
      
     },
   });
