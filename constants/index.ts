@@ -16,7 +16,7 @@ export const offers = [
     {
         image:"/20383.webp",
         label:"300 ml bottle",
-        price:"3"
+        price:"1"
     },
     {
         image:"/kinley-packaged-drinking-water-500-ml-product-images-o490001792-p490001792-1-202203150620.webp",
