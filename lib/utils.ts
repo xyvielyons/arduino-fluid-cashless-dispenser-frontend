@@ -26,3 +26,22 @@ export function convertTimestampToDateAndTime(timestamp:any) {
 
   return { date: formattedDate, time: formattedTime };
 }
+export function extractPumpValues(message:any) {
+  // Regex pattern to extract flow rate, total liters, and target liters
+  const regex = /Flow Rate:\s*([\d.]+)\s*L\/min,\s*Total Liters:\s*([\d.]+)\s*TargetLitres:\s*([\d.]+)/;
+
+  // Apply the regex to the message string
+  const matches = message.match(regex);
+
+  if (matches) {
+      // Return the extracted values as an object
+      return {
+          flowRate: parseFloat(matches[1]),
+          totalLiters: parseFloat(matches[2]),
+          targetLitres: parseFloat(matches[3])
+      };
+  } else {
+      // If no matches found, return null or an empty object
+      return null;
+  }
+}

@@ -16,8 +16,8 @@ import {
 } from '@clerk/nextjs'
 
 export const metadata: Metadata = {
-  title: "Checkin Attendance system",
-  description: "RFID employee management system",
+  title: "Water vending system",
+  description: "Water vending system",
 };
 
 export const roboto = Roboto({

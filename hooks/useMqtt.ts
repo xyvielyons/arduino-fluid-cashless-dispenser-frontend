@@ -7,6 +7,7 @@ const [message, setMessage] = useState<any>(null);
 const [isConnected, setIsConnected] = useState(false);
 const [healthStatus, setHealthStatus] = useState('Unknown');
 const [messageTimer, setMessageTimer] = useState<any>(null); // Timer for checking message
+const [pumpMessage,setPumpMessage] = useState<any>("Flow Rate: 0.00 L/min, Total Liters: 0.00 TargetLitres: 0.00")
 
 useEffect(()=>{
     const options = {
@@ -24,7 +25,7 @@ useEffect(()=>{
         setIsConnected(true);
   
         // Subscribe to the health check topic
-        client.subscribe('esp32/health', (err) => {
+        client.subscribe(['esp32/health','esp32/test1'], (err) => {
             if (!err) {
                 console.log('Subscribed to esp32/health');
             }
@@ -38,6 +39,11 @@ useEffect(()=>{
           setHealthStatus(message);
         }
         setMessage({ topic, message });
+
+        if(topic === 'esp32/test1'){
+            console.log(`pump vending status:${message}`)
+            setPumpMessage({message,topic})
+        }
         // Reset the timer whenever a message is received
         if (messageTimer) {
             clearTimeout(messageTimer);
@@ -65,6 +71,6 @@ useEffect(()=>{
 },[messageTimer])
 
 
-return { message, isConnected, healthStatus };
+return { message, isConnected, healthStatus,pumpMessage };
 
 }
